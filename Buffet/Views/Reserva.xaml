@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Buffet.Views.Reserva"
+             NavigationPage.HasNavigationBar="False"
+             Background="#000000">
+
+    <!-- Main -->
+    <VerticalStackLayout
+        HorizontalOptions="Center">
+
+        <!-- Título -->
+        <Label
+            Text="L'Essence"
+            FontFamily="GreatVibes"
+            FontSize="45"
+            TextColor="#ffffff"
+            HorizontalTextAlignment="Center"
+            Padding="30, 30, 30, 0"/>
+
+        <!-- Subtítulo -->
+        <Label
+            Text="Informações da Reserva"
+            FontFamily="PlayfairDisplay-Bold"
+            FontSize="25"
+            TextColor="#ffffff"
+            HorizontalTextAlignment="Center"
+            Padding="30"/>
+
+
+        <!-- Core -->            
+        <VerticalStackLayout>
+
+            
+            <!-- Frame 1 - Total -->
+            <Frame BackgroundColor="#D4AF37">
+
+                <!-- Frame - Div -->
+                <VerticalStackLayout Spacing="15">
+
+
+                    <!-- Frame - Conteúdo linha 1 -->
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Label
+                            Text="Seu nome: "
+                            TextColor="#000000"/>
+
+                        <Entry
+                            x:Name="NomeUsuario"
+                            MinimumWidthRequest="242"
+                            Text="{Binding Value}"
+                            BindingContext="{x:Reference NomeUsuario}"
+                            TextColor="#ffffff"
+                            BackgroundColor="#000000"/>
+
+                    </HorizontalStackLayout>
+
+
+                    <!-- Frame - Conteúdo linha 2 -->
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Label
+                            Text="Nome do evento: "
+                            TextColor="#000000"/>
+
+                        <Entry
+                            x:Name="NomeEvento"
+                            MinimumWidthRequest="200"
+                            BindingContext="{Binding NomeEvento}"
+                            TextColor="#ffffff"
+                            BackgroundColor="#000000"/>
+
+                    </HorizontalStackLayout>
+
+                    
+                    <!-- Frame - Conteúdo linha 3 -->
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Label
+                            Text="Data inicial:"
+                            TextColor="#000000"/>
+
+                        <DatePicker
+                            x:Name="dtpck_inicio"
+                            Format="dd/mm/yyyy"
+                            TextColor="#ffffff"
+                            BackgroundColor="#000000"/>
+
+                    </HorizontalStackLayout>
+
+                    
+                    <!-- Frame - Conteúdo linha 4 -->
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Label
+                            Text="Data final:"
+                            TextColor="#000000"/>
+
+                        <DatePicker
+                            x:Name="dtpck_final"
+                            Format="dd/mm/yyyy"
+                            TextColor="#ffffff"
+                            Background="#000000"/>
+
+                    </HorizontalStackLayout>
+
+                    
+                    <!-- Frame - Conteúdo linha 5 -->
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Label
+                            Text="Escolha o salão:"
+                            TextColor="#000000"/>
+
+                        <Picker
+                            x:Name="pck_salao"
+                            ItemDisplayBinding="{Binding Descricao}"
+                            TextColor="#ffffff"
+                            BackgroundColor="#000000"/>
+
+                    </HorizontalStackLayout>
+
+
+                    <!-- Frame - Conteúdo linha 6 -->
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Label
+                            Text="Quantidade de pessoas:"
+                            TextColor="#000000"/>
+
+                        <Label
+                            Text="{Binding Value}"
+                            BindingContext="{x:Reference stp_pessoas}"
+                            TextColor="#000000"/>
+
+                        <Stepper
+                            x:Name="stp_pessoas"
+                            Minimum="0"
+                            Maximum="100"
+                            Increment="1"
+                            BackgroundColor="#000000"/>
+
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </VerticalStackLayout>
+
+        <!-- Botão de Prosseguir -->
+        <Button
+            Text="Prosseguir"
+            FontFamily="PlayfairDisplay-Bold"
+            FontSize="20"
+            TextColor="#000000"
+            BackgroundColor="#D4AF37"
+            Margin="20"
+            Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Buffet.Views.Home"
+             NavigationPage.HasNavigationBar="False"
+             Background="#000000">
+    
+    <VerticalStackLayout
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="Center"
+        Spacing="70">
+        
+        <Label 
+            Text="L'Essence"
+            FontFamily="GreatVibes"
+            FontSize="80"
+            TextColor="#ffffff"/>
+
+        <Label
+            Text="Transforme os seus momentos em memórias inesquecíveis."
+            FontFamily="PlayfairDisplayRegular"
+            FontSize="35"
+            TextColor="#ffffff"/>
+
+        <Button
+            Text="Reservar Agora"
+            FontFamily="PlayfairDisplayBold"
+            FontSize="35"
+            TextColor="#000000"
+            BackgroundColor="#D4AF37"
+            Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+    
+</ContentPage>
